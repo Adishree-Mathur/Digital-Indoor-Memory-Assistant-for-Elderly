@@ -1,0 +1,55 @@
+/* ============================================================
+   HOMEFIND — Global Design System
+   ============================================================ */
+:root {
+  --teal-900: #0D3D38;
+  --teal-800: #145249;
+  --teal-700: #1A6B60;
+  --teal-600: #21856F;
+  --teal-500: #2A9E84;
+  --teal-400: #4DB89E;
+  --teal-300: #7ECFC0;
+  --teal-100: #D6F2EE;
+  --teal-50: #EEF9F7;
+  --amber-700: #92560A;
+  --amber-600: #B36B0E;
+  --amber-500: #D4841A;
+  --amber-400: #EBA030;
+  --amber-300: #F5BE6A;
+  --amber-100: #FDF0D5;
+  --amber-50: #FEFBF0;
+  --warm-900: #1C1410;
+  --warm-800: #2E221A;
+  --warm-700: #4A3728;
+  --warm-600: #6B5040;
+  --warm-500: #8C6F5E;
+  --warm-300: #C4A898;
+  --warm-200: #DDD0C8;
+  --warm-100: #F0E9E3;
+  --warm-50: #FAF6F3;
+  --white: #ffffff;
+  --danger: #D44A4A;
+  --danger-light: #FDEAEA;
+  --font-display: 'Lora', Georgia, serif;
+  --font-body: 'Nunito', system-ui, sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+  --shadow-xs: 0 1px 4px rgba(28,20,16,.07);
+  --shadow-sm: 0 2px 10px rgba(28,20,16,.10);
+  --shadow-md: 0 6px 24px rgba(28,20,16,.13);
+  --shadow-lg: 0 16px 48px rgba(28,20,16,.18);
+  --transition: 220ms cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:16px;}
+body{font-family:var(--font-body);background:var(--warm-50);color:var(--warm-900);min-height:100vh;overflow:hidden;}
+button{font-family:var(--font-body);cursor:pointer;}
+input,textarea,select{font-family:var(--font-body);}
+img{display:block;max-width:100%;}
+::-webkit-scrollbar{width:6px;height:6px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:var(--warm-200);border-radius:3px;}
+mark{background:var(--amber-100);border-radius:2px;padding:0 2px;}
