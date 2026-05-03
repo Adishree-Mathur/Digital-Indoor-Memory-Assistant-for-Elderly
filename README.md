@@ -1,119 +1,119 @@
-# 🧠 Digital Indoor Memory Assistant for Elderly
+# 🏡 Digital Indoor Memory Assistant for Elderly
 
 ## 📌 Overview
 
-The **Digital Indoor Memory Assistant for Elderly** is a smart system designed to help senior citizens manage daily tasks, remember important activities, and improve their safety and independence within indoor environments.
+The **Digital Indoor Memory Assistant** is a smart web application designed to help elderly individuals remember where they have kept important items inside their home.
 
-This project aims to reduce memory-related challenges by providing intelligent reminders, alerts, and assistance using modern technologies.
+Users can upload a layout of their home, mark locations visually, and store item details for easy retrieval later.
 
 ---
 
-## 🚀 Features
+## 🚀 Key Features
 
-* ⏰ Smart reminders for daily tasks (medication, appointments, etc.)
-* 📍 Indoor assistance and navigation support
-* 🔔 Real-time alerts and notifications
-* 🧓 User-friendly interface for elderly users
-* 📊 Activity tracking and monitoring
-* 🤖 AI-based assistance (optional/expandable)
+### 📍 Visual Item Placement
+
+* Users can upload a home layout (floor plan/image)
+* Click anywhere on the map to place a pin
+* Coordinates are captured dynamically (percentage-based positioning)
+
+---
+
+### 📝 Add & Save Items
+
+* Enter item name and description
+* Save item along with its exact location on the map
+* Each item is associated with:
+
+  * Name
+  * Description
+  * Coordinates (x, y)
+
+---
+
+### 🔍 Search & Locate Items
+
+* Users can search for stored items
+* Matching items are highlighted on the map
+* Helps quickly recall where items were kept
+
+---
+
+### 🗺️ Interactive Map UI
+
+* Real-time pin placement
+* Visual feedback for selected and saved items
+* Highlight animation for searched items
+
+---
+
+### ⚙️ Backend Integration (REST API)
+
+* Built custom REST APIs using **Java Servlets**
+* APIs handle:
+
+  * Saving item data (`POST /saveItem`)
+  * Retrieving item data (`GET /searchItem`)
+* Communication between frontend and backend via **JSON**
+
+---
+
+### 💾 Data Handling
+
+* Frontend uses **localStorage** for persistence
+* Backend currently uses **in-memory storage**
+* Easily extendable to databases like MySQL or MongoDB
 
 ---
 
 ## 🛠️ Tech Stack
 
-* **Frontend:** (e.g., React / HTML / CSS / JavaScript)
-* **Backend:** (e.g., Node.js / Java / Python)
-* **Database:** (e.g., MongoDB / MySQL)
-* **Other Technologies:** IoT / AI / APIs (if used)
+### Frontend
+
+* React.js
+* HTML, CSS, JavaScript
+
+### Backend
+
+* Java Servlets
+* Apache Tomcat
+
+### Communication
+
+* REST API (HTTP methods: GET, POST)
+* JSON data exchange
 
 ---
 
-## 📂 Project Structure
+## 🔄 Application Flow
 
-```
-project-folder/
-│── src/
-│── public/
-│── assets/
-│── components/
-│── backend/
-│── README.md
-```
+1. User uploads home layout
+2. Clicks on map to place item location
+3. Enters item details
+4. Data is sent to backend via API
+5. Item is saved and displayed
+6. User can search and locate items later
 
 ---
 
-## ⚙️ Installation & Setup
+## 🎯 Problem Solved
 
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/your-username/Digital-Indoor-Memory-Assistant-for-Elderly.git
-```
-
-### 2. Navigate to project folder
-
-```bash
-cd Digital-Indoor-Memory-Assistant-for-Elderly
-```
-
-### 3. Install dependencies
-
-```bash
-npm install
-```
-
-### 4. Run the project
-
-```bash
-npm start
-```
-
----
-
-## 📸 Screenshots
-
-*Add screenshots of your project here*
-
----
-
-## 🎯 Use Case
-
-This system is especially useful for:
-
-* Elderly people living alone
-* Patients with memory-related conditions
-* Caregivers monitoring loved ones
+This project addresses a real-world issue where elderly individuals often forget where they have kept their belongings.
+By providing a **visual memory aid**, the system makes recalling item locations simple and intuitive.
 
 ---
 
 ## 🔮 Future Enhancements
 
-* Voice assistant integration 🎙️
-* Wearable device connectivity ⌚
-* Emergency alert system 🚨
-* AI-based behavior prediction
+* Database integration (MySQL / MongoDB)
+* Voice-based search
+* Multi-language support
+* AI-based suggestions
+* Mobile app version
 
 ---
 
-## 🤝 Contributing
+## 👩‍💻 Author
 
-Contributions are welcome! Feel free to fork this repo and submit a pull request.
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
+Adishree Mathur
 
 ---
-
-## 👨‍💻 Author
-
-**Kaushal**
-GitHub: https://github.com/Kaushal2702
-
----
-
-## ⭐ Support
-
-If you like this project, give it a ⭐ on GitHub!
