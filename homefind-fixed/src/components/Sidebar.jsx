@@ -31,11 +31,15 @@ export default function Sidebar({
 }) {
   return (
     <aside style={{
-      width: '360px', flexShrink: 0,
+      width: '360px',
+      flexShrink: 0,
       background: 'var(--white)',
       borderRight: '1.5px solid var(--warm-200)',
-      display: 'flex', flexDirection: 'column',
-      overflow: 'hidden', zIndex: 10,
+      display: 'flex',
+      flexDirection: 'column',
+      overflow: 'hidden',      
+      height: '100vh',         
+      zIndex: 10,
     }}>
       {/* Tabs */}
       <div style={TAB_STYLES.row}>

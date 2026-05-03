@@ -1,0 +1,23 @@
+<web-app>
+
+    <servlet>
+        <servlet-name>SaveItem</servlet-name>
+        <servlet-class>SaveItemServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SaveItem</servlet-name>
+        <url-pattern>/saveItem</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SearchItem</servlet-name>
+        <servlet-class>SearchItemServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SearchItem</servlet-name>
+        <url-pattern>/searchItem</url-pattern>
+    </servlet-mapping>
+
+</web-app>

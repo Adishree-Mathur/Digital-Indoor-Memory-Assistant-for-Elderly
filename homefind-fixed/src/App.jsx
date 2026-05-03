@@ -29,28 +29,52 @@ export default function App() {
 
   /* ── Handle save submission triggered from AddItemPanel ── */
   useEffect(() => {
-    if (!formState._submit) return;
-    const { name, desc, photoDataUrl, pendingPin } = formState;
-    if (!name.trim() || !pendingPin) return;
+  if (!formState._submit) return;
 
-    const newItem = {
-      id:    uid(),
-      name:  name.trim(),
-      desc:  desc.trim(),
-      photo: photoDataUrl,
-      x:     pendingPin.x,
-      y:     pendingPin.y,
-      saved: new Date().toISOString(),
-      emoji: itemEmoji(name),
-    };
+  const { name, desc, photoDataUrl, pendingPin } = formState;
+  if (!name.trim() || !pendingPin) return;
 
-    setItems(prev => [newItem, ...prev]);
-    setFormState(EMPTY_FORM);
-    showToast(`"${newItem.name}" saved to your map!`);
-    setActiveTab('search');
-    // highlight after tab switch
-    setTimeout(() => highlightItem(newItem.id), 400);
-  }, [formState._submit]);
+  const newItem = {
+    id: uid(),
+    name: name.trim(),
+    desc: desc.trim(),
+    photo: photoDataUrl,
+    x: pendingPin.x,
+    y: pendingPin.y,
+    saved: new Date().toISOString(),
+    emoji: itemEmoji(name),
+  };
+
+  // frontend save
+  setItems(prev => [newItem, ...prev]);
+
+  // backend call
+  fetch("http://localhost:8080/memory-app/saveItem", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      item: newItem.name,
+      description: newItem.desc,
+      x: newItem.x,
+      y: newItem.y
+    })
+  })
+  .then(res => res.text())
+  .then(data => console.log("Backend:", data));
+
+  // UI updates
+  setFormState(EMPTY_FORM);
+  showToast(`"${newItem.name}" saved to your map!`);
+  setActiveTab('search');
+
+  setTimeout(() => highlightItem(newItem.id), 400);
+
+}, [formState._submit]);
+
+
+    
 
   /* ── Highlight an item on map ── */
   const highlightItem = useCallback((id) => {

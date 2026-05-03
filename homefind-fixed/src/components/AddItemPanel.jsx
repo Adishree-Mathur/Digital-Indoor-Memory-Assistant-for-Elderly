@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 
 const s = {
-  pane: { flex: 1, overflowY: 'auto', padding: '16px 18px 24px', display: 'flex', flexDirection: 'column', gap: 16 },
+  pane: { flex: 1, overflowY: 'auto',
+  height: '100%',  padding: '16px 18px 24px', display: 'flex', flexDirection: 'column', gap: 16 },
   stepsRow: { display: 'flex', alignItems: 'center', marginBottom: 4 },
   step: { display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1, gap: 4 },
   stepCircle: {
@@ -71,10 +72,11 @@ function StepCircleStyle(status) {
 
 export default function AddItemPanel({ name, desc, photo, pendingPin, onNameChange, onDescChange, onPhotoChange, onClear, onSave }) {
   const fileRef = useRef();
-  const hasName  = name.trim().length > 0;
+  const hasName  = name && name.trim().length > 0;
   const hasPhoto = !!photo;
   const hasPin   = !!pendingPin;
-  const canSave  = hasName && hasPin;
+
+  const canSave = hasName && hasPin;
 
   const stepStatus = (n) => {
     if (n === 1) return hasName ? 'done' : 'active';
